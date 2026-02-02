@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useDesignMode } from '@/contexts/DesignModeContext';
 import { portfolioData } from '@/data/portfolioData';
-import headshot from '@/assets/headshot.jpg';
+
 
 const About = () => {
   const { isLaunchMode, isBlueprintMode } = useDesignMode();
@@ -24,36 +24,11 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Profile Image */}
-          <motion.div
-            className="md:col-span-1"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className={`blueprint-container overflow-hidden ${isLaunchMode ? 'glass-card' : ''}`}
-              style={{ borderRadius: isLaunchMode ? '12px' : '0' }}
-            >
-              {isBlueprintMode ? (
-                <div className="asset-placeholder aspect-square flex flex-col items-center justify-center">
-                  <span className="text-4xl font-bold">X</span>
-                  <span className="text-[10px] mt-2 uppercase">[ASSET_PROFILE]</span>
-                </div>
-              ) : (
-                <img
-                  src={headshot}
-                  alt={personal.name}
-                  className="w-full aspect-square object-cover"
-                />
-              )}
-            </div>
-          </motion.div>
+        <div className="grid md:grid-cols-1 gap-8">
 
           {/* Bio Content */}
           <motion.div
-            className="md:col-span-2 space-y-6"
+            className="space-y-6"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -106,18 +81,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Background Summary */}
-            <div className={`blueprint-container p-6 ${isLaunchMode ? 'glass-card' : ''}`}
-              style={{ borderRadius: isLaunchMode ? '12px' : '0' }}
-            >
-              <span className="section-label -top-2 left-2">&lt;div class="background"&gt;</span>
-              <h3 className={`text-lg font-bold mb-3 ${isLaunchMode ? 'text-white' : 'text-foreground'}`}>
-                {isBlueprintMode ? '/* BACKGROUND */' : 'Background'}
-              </h3>
-              <p className={`text-sm leading-relaxed ${isLaunchMode ? 'text-gray-300' : 'text-muted-foreground'}`}>
-                {about.background}
-              </p>
-            </div>
           </motion.div>
         </div>
       </div>

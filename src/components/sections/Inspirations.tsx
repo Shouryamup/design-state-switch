@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useDesignMode } from '@/contexts/DesignModeContext';
 import { portfolioData } from '@/data/portfolioData';
-import { ExternalLink } from 'lucide-react';
+
 
 const Inspirations = () => {
   const { isLaunchMode, isBlueprintMode } = useDesignMode();
@@ -69,22 +69,6 @@ const Inspirations = () => {
                 {item.description}
               </p>
 
-              {/* Link (optional) */}
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-1 text-sm transition-colors duration-400 ease-in-out ${
-                    isLaunchMode 
-                      ? 'text-primary hover:text-accent' 
-                      : 'text-foreground hover:text-muted-foreground underline'
-                  }`}
-                >
-                  {isBlueprintMode ? '[LINK]' : 'Learn more'}
-                  <ExternalLink size={14} />
-                </a>
-              )}
             </motion.div>
           ))}
         </div>

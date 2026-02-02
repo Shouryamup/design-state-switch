@@ -17,7 +17,20 @@ const Contact = () => {
     <section className="relative px-6 py-20" id="contact">
       <span className="section-label top-4 left-4">&lt;section id="contact"&gt;</span>
       
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
+        {/* Section Heading */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className={`text-3xl md:text-4xl font-bold ${isLaunchMode ? 'text-white' : 'text-foreground'}`}>
+            {isBlueprintMode ? '// CERTIFICATIONS_ACHIEVEMENTS' : 'Certifications & Achievements'}
+          </h2>
+        </motion.div>
+
         {/* Certifications */}
         <motion.div
           className={`blueprint-container p-6 mb-12 ${isLaunchMode ? 'glass-card' : ''}`}
@@ -27,10 +40,7 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className={`text-lg font-bold mb-6 flex items-center gap-2 ${isLaunchMode ? 'text-white' : 'text-foreground'}`}>
-            <Award size={20} className={isLaunchMode ? 'text-primary' : ''} />
-            {isBlueprintMode ? '// CERTIFICATIONS' : 'Certifications & Achievements'}
-          </h3>
+          <span className="section-label -top-2 left-2">&lt;ul class="certifications"&gt;</span>
           
           <ul className="space-y-4">
             {achievements.map((achievement, index) => (

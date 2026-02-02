@@ -51,7 +51,7 @@ const highlightKeywords = (text: string, isHovered: boolean, isLaunchMode: boole
   });
 };
 
-type Project = typeof portfolioData.projects[0];
+type Project = typeof portfolioData.projects[0] & { highlights?: string[] };
 
 const Projects = () => {
   const { isLaunchMode, isBlueprintMode } = useDesignMode();
@@ -192,29 +192,19 @@ const Projects = () => {
                 )}
               </div>
 
-              {/* Full Description */}
+              {/* Key Highlights from Resume */}
               <div className="space-y-4">
                 <div>
-                  <h4 className={`text-lg font-semibold mb-2 ${isLaunchMode ? 'text-white' : 'text-foreground'}`}>
-                    {isBlueprintMode ? '/* DESCRIPTION */' : 'About'}
+                  <h4 className={`text-lg font-semibold mb-3 ${isLaunchMode ? 'text-white' : 'text-foreground'}`}>
+                    {isBlueprintMode ? '/* KEY_HIGHLIGHTS */' : 'Key Highlights'}
                   </h4>
-                  <p className={`text-sm leading-relaxed ${isLaunchMode ? 'text-gray-300' : 'text-muted-foreground'}`}>
-                    {selectedProject.fullDescription}
-                  </p>
-                </div>
-
-                {/* Features */}
-                <div>
-                  <h4 className={`text-lg font-semibold mb-2 ${isLaunchMode ? 'text-white' : 'text-foreground'}`}>
-                    {isBlueprintMode ? '/* KEY_FEATURES */' : 'Key Features'}
-                  </h4>
-                  <ul className="space-y-2">
-                    {selectedProject.features?.map((feature, index) => (
-                      <li key={index} className={`flex items-start gap-2 text-sm ${isLaunchMode ? 'text-gray-300' : 'text-muted-foreground'}`}>
-                        <span className={`mt-1.5 w-1.5 h-1.5 flex-shrink-0 ${
+                  <ul className="space-y-3">
+                    {selectedProject.highlights?.map((highlight, index) => (
+                      <li key={index} className={`flex items-start gap-3 text-sm leading-relaxed ${isLaunchMode ? 'text-gray-300' : 'text-muted-foreground'}`}>
+                        <span className={`mt-1.5 w-2 h-2 flex-shrink-0 ${
                           isLaunchMode ? 'rounded-full bg-primary' : 'bg-foreground'
                         }`} />
-                        {feature}
+                        {highlight}
                       </li>
                     ))}
                   </ul>
