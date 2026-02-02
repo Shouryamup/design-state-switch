@@ -19,11 +19,11 @@ const Index = () => {
         <main>
           <Hero />
           <About />
-          <Inspirations />
           <Experience />
           <Projects />
           <Skills />
           <Contact />
+          <Inspirations />
         </main>
       </div>
     </DesignModeProvider>

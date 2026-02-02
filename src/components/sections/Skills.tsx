@@ -1,6 +1,58 @@
 import { motion } from 'framer-motion';
 import { useDesignMode } from '@/contexts/DesignModeContext';
 import { portfolioData } from '@/data/portfolioData';
+import { 
+  Code2, 
+  FileCode, 
+  Coffee, 
+  Terminal, 
+  Database as DatabaseIcon,
+  Globe,
+  Layers,
+  FileType,
+  Cpu,
+  Layout,
+  Server,
+  Cloud,
+  Container,
+  GitBranch,
+  Workflow,
+  Rocket
+} from 'lucide-react';
+
+// Skill icons mapping
+const skillIcons: Record<string, React.ReactNode> = {
+  // Languages
+  'Python': <Code2 size={14} />,
+  'C++': <Cpu size={14} />,
+  'Java': <Coffee size={14} />,
+  'JavaScript': <FileCode size={14} />,
+  'TypeScript': <FileType size={14} />,
+  'SQL': <DatabaseIcon size={14} />,
+  'MATLAB': <Terminal size={14} />,
+  // Frontend
+  'React': <Layers size={14} />,
+  'Angular': <Layout size={14} />,
+  'Next.js': <Globe size={14} />,
+  'HTML5': <FileCode size={14} />,
+  'CSS3': <Layout size={14} />,
+  // Backend
+  'Node.js': <Server size={14} />,
+  'Spring Boot': <Rocket size={14} />,
+  'Express.js': <Server size={14} />,
+  'RESTful APIs': <Workflow size={14} />,
+  'MySQL': <DatabaseIcon size={14} />,
+  'DynamoDB': <DatabaseIcon size={14} />,
+  'Redis': <DatabaseIcon size={14} />,
+  // Cloud
+  'AWS': <Cloud size={14} />,
+  'Azure': <Cloud size={14} />,
+  'Docker': <Container size={14} />,
+  'Kubernetes': <Container size={14} />,
+  'Jenkins': <Workflow size={14} />,
+  'CI/CD': <Workflow size={14} />,
+  'Git': <GitBranch size={14} />,
+};
 
 const Skills = () => {
   const { isLaunchMode, isBlueprintMode } = useDesignMode();
@@ -58,18 +110,19 @@ const Skills = () => {
                   ))}
                 </ul>
               ) : (
-                // Launch: Animated pill badges
+                // Launch: Animated pill badges with icons
                 <div className="flex flex-wrap gap-2">
                   {skills[category.key].map((skill, index) => (
                     <motion.span
                       key={skill}
-                      className="skill-badge"
+                      className="skill-badge inline-flex items-center gap-1.5"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
                       whileHover={{ scale: 1.05 }}
                     >
+                      {skillIcons[skill] && <span className="text-primary">{skillIcons[skill]}</span>}
                       {skill}
                     </motion.span>
                   ))}

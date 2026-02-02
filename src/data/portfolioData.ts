@@ -140,14 +140,11 @@ export const portfolioData = {
       tech: ["Agentic AI", "React", "Node.js", "Express.js", "MSSQL", "AWS S3", "Azure OpenAI"],
       period: "Aug 2024 – Dec 2024",
       description: "Architected multi-agent AI system with inter-agent communication using Azure OpenAI and Copilot Studio. Developed full-stack banking intelligence platform with real-time market dashboards and interactive chatbot.",
-      fullDescription: "IntelliBank AI is a comprehensive banking intelligence platform that leverages cutting-edge AI technologies. The system features multiple specialized AI agents that communicate with each other to provide holistic financial insights. Key features include real-time market data visualization, predictive analytics for investment recommendations, and a conversational AI chatbot that can answer complex banking queries. The platform processes thousands of transactions in real-time and provides actionable insights to banking professionals.",
       image: "intellibank",
       githubUrl: "",
-      features: [
-        "Multi-agent AI architecture with Azure OpenAI",
-        "Real-time market dashboards with WebSocket updates",
-        "Interactive chatbot with natural language understanding",
-        "Secure authentication and role-based access control",
+      highlights: [
+        "Architected multi-agent AI system with inter-agent communication using Azure OpenAI and Copilot Studio, implementing 5 autonomous agents with coordinated workflows and advanced prompt engineering.",
+        "Developed full-stack banking intelligence platform powered by multi-agent, featuring real-time market dashboards, customer analysis pages, and interactive chatbot using React, Node.js, REST APIs, and Azure SQL database.",
       ],
     },
     {
@@ -156,14 +153,12 @@ export const portfolioData = {
       tech: ["React.js", "Node.js", "AWS RDS", "MySQL", "AWS S3", "CloudFront"],
       period: "Jan 2024 – Apr 2024",
       description: "Comprehensive web application for efficient event management. Integrated AWS RDS and S3 for persistent storage and accelerated content delivery using CloudFront.",
-      fullDescription: "GatorHive is a full-featured event management platform designed for the University of Florida community. It enables students and organizations to create, discover, and manage campus events seamlessly. The application features a robust backend powered by AWS services, including RDS for relational data storage, S3 for media assets, and CloudFront for global content delivery. The React frontend provides an intuitive user experience with real-time updates and responsive design.",
       image: "gatorhive",
       githubUrl: "",
-      features: [
-        "Event creation and RSVP management",
-        "Media upload with S3 integration",
-        "Search and filter functionality",
-        "Email notifications and reminders",
+      highlights: [
+        "Utilized comprehensive user research techniques like affinity diagrams and focus groups to understand user needs and preferences.",
+        "Developed a comprehensive web application for efficient event management, employing React.js, CSS, and Node.js.",
+        "Integrated AWS RDS (MySQL) and S3 for persistent storage and media, and accelerated content delivery using CloudFront.",
       ],
     },
     {
@@ -172,14 +167,12 @@ export const portfolioData = {
       tech: ["Python", "PyTorch", "NumPy", "Deep Learning", "ResNet"],
       period: "Aug 2023 – Dec 2023",
       description: "Led development of ResNet-based deep learning model for American Sign Language classification. Achieved 99.26% test accuracy with near-perfect precision and recall.",
-      fullDescription: "This deep learning project focuses on real-time American Sign Language (ASL) gesture recognition. Using a modified ResNet architecture, the model was trained on thousands of ASL gesture images to classify 26 letters of the alphabet. The project includes data augmentation techniques, transfer learning from ImageNet weights, and extensive hyperparameter tuning. The final model achieves state-of-the-art accuracy and can be deployed for real-time inference.",
       image: "asl",
       githubUrl: "",
-      features: [
-        "ResNet-based architecture with transfer learning",
-        "99.26% test accuracy on ASL dataset",
-        "Real-time inference capability",
-        "Comprehensive data augmentation pipeline",
+      highlights: [
+        "Led a team of three through the entire project lifecycle, from data collection to model deployment on HiperGator, the University of Florida's high-performance computing supercomputer.",
+        "Designed a ResNet based deep learning architecture to overcome vanishing gradient issues in deep neural networks.",
+        "Engineered the model with exceptional performance in classifying American Sign Language (ASL) images, achieving a test accuracy of 99.26%, test loss of 0.0002, and near-perfect precision, recall, and F1-scores across all ASL letters.",
       ],
     },
   ],
